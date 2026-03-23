@@ -1,0 +1,5 @@
+instagram,Viraj,viraj@kulkarni
+gmail,Rani,rani@456
+yahoo,Pallavi Sharma,sharma@2
+chocolate,Kajal,kajal@23
+gmail,Rani,rani@456
