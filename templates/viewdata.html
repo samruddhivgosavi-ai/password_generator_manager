@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>View Candidates Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</head>
+<body>
+     <div class="container mt-5">
+         <h2 class="text-center mb-4">Resume Data</h2>
+         <form method="post" class="d-flex">
+             <div class="input-group">
+                 <input type="text" name="search" class=" me-2" placeholder="Search by Name">
+                 <button class="btn btn-secondary">Search</button>
+             </div>
+         </form>
+
+         <div class="d-flex justify-content-center align-items-center mb-3">
+             <a href="/download_pdf" class="btn btn-dark me-2">Download PDF</a>
+             <a href="/clear_all" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete all records?')">Clear Data</a>
+         </div>
+
+         <table class="table table-bordered table-striped">
+             <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Job Role</th>
+                    <th>Score</th>
+                    <th>Status</th>
+                    <th>Matched Skills</th>
+                </tr>
+             </thead>
+             <tbody>
+                 {% for row in data %}
+                 <tr>
+                     <td>{{row[0]}}</td>
+                     <td>{{row[1]}}</td>
+                     <td>{{row[2]}}</td>
+                     <td>{{row[3]}}</td>
+                     <td>{{row[4]}}</td>
+                     <td>{{row[5]}}</td>
+                 </tr>
+                 {% endfor %}
+             </tbody>
+         </table>
+     </div>
+
+</body>
+</html>
